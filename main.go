@@ -1,4 +1,4 @@
-// Author(s): (1) Immersha Entertainment, (2)Jeremy Deats
+// Author(s): (1) Immersha Entertainment, (2) Jeremy Deats
 // Copyright 2019
 //
 // License:
