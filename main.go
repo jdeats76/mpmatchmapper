@@ -132,14 +132,14 @@ func readMap(w http.ResponseWriter, r *http.Request) {
 		// authorized
 		_, isInList := m[map_id]
 		if (isInList == false) {
-			// key already exist in hash, return error
+			// key not found in hash return error
 			json_send = "{\"message\":\"mapid not found\"}"
 			fmt.Fprint(w, json_send)
 			return
 		} else {
-			// get next count in iteratioe
+			// fetch value from hash
 			result_label := m[map_id]
-			// return to client new label
+			// return to client value 
 			json_send = "{\"matchid\":\"" + result_label + "\"}"
 			fmt.Fprint(w, json_send)
 			return
@@ -173,8 +173,7 @@ func writeMap(w http.ResponseWriter, r *http.Request) {
 			// copy value so we aren't referencing global counter
 			ref_count := m_count
 
-			// cleanup. If we're past our threshold restart. This is to flush old session maps
-			// adjust treshold as needed.
+			// cleanup. If we're past our threshold reset the counter
 			if (m_count > m_count_threshold) {
 				m_count = 1
 			}
