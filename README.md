@@ -15,19 +15,29 @@ The services exposes three end-points. A removemap end-point is provided, but au
 thresholds which can be configured
 
 writemap:
+
 req:
 http://localhost:8087/writemap?key=testkey&matchid=d7725dd8-1645-45fe-8e8b-e96004ea7658
+
 resp:
 {"mapid":"37PA"}
 
 
+
 readmap:
+
+req:
 http://localhost:8087/readmap?key=testkey&mapid=73PA
+
 resp:
 {"matchid":"d7725dd8-1645-45fe-8e8b-e96004ea7658"}
 
 
+
 removemap:
+
+req:
 http://localhost:8087/removemap?key=testkey&mapid=73PA
+
 resp:
 {"message":"success"}
